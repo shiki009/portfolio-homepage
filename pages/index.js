@@ -208,7 +208,7 @@ const Page = () => {
                 product.
                 <br />
                 🥑 <strong>Developed, implemented, and maintained</strong>{' '}
-                microservices as part of Feelingstream's application system,
+                microservices as part of Feelingstream’s application system,
                 integrating with platforms like{' '}
                 <strong>Genesys, Kafka, and Zendesk</strong>.
                 <br />
