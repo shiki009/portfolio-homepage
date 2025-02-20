@@ -25,7 +25,7 @@ const Page = () => {
   const [showMoreHead, setShowMoreHead] = useState(false)
   const [chatOpen, setChatOpen] = useState(false)
   const [chatInput, setChatInput] = useState('')
-  const [chatHistory, setChatHistory] = useState([])
+  // const [chatHistory, setChatHistory] = useState([])
 
   const [showHint, setShowHint] = useState(true)
 
@@ -117,18 +117,18 @@ const Page = () => {
           width="300px"
         >
           <Box height="200px" overflowY="auto" mb={2}>
-            {chatHistory.map((msg, index) => (
-              <Box
-                key={index}
-                bg={msg.sender === 'user' ? 'blue.200' : 'gray.300'}
-                p={2}
-                borderRadius="md"
-                mb={1}
-              >
-                <strong>{msg.sender === 'user' ? 'You:' : 'Bot:'}</strong>{' '}
-                {msg.text}
-              </Box>
-            ))}
+            {/*{chatHistory.map((msg, index) => (*/}
+            {/*  <Box*/}
+            {/*    key={index}*/}
+            {/*    bg={msg.sender === 'user' ? 'blue.200' : 'gray.300'}*/}
+            {/*    p={2}*/}
+            {/*    borderRadius="md"*/}
+            {/*    mb={1}*/}
+            {/*  >*/}
+            {/*    <strong>{msg.sender === 'user' ? 'You:' : 'Bot:'}</strong>{' '}*/}
+            {/*    {msg.text}*/}
+            {/*  </Box>*/}
+            {/*))}*/}
           </Box>
           <Textarea
             value={chatInput}
