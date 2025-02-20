@@ -110,7 +110,7 @@ const Page = () => {
           position="fixed"
           bottom="80px"
           right="20px"
-          bg={useColorModeValue('gray.100', 'gray.700')}
+          // bg={useColorModeValue('gray.100', 'gray.700')}
           p={4}
           borderRadius="lg"
           boxShadow="lg"
