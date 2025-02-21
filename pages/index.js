@@ -13,7 +13,7 @@ import {
   Collapse,
   Textarea,
   Tooltip,
-  Text
+  Text, Spinner
 } from '@chakra-ui/react'
 import Section from '../components/section'
 import Paragraph from '../components/paragraph'
@@ -23,9 +23,12 @@ import { IoLogoInstagram, IoLogoGithub, IoChatbubbles } from 'react-icons/io5'
 const Page = () => {
   const [showMore, setShowMore] = useState(false)
   const [showMoreHead, setShowMoreHead] = useState(false)
+  const [showMoreBsc, setShowMoreBsc] = useState(false)
+  const [showMoreMsc, setShowMoreMsc] = useState(false)
   const [chatOpen, setChatOpen] = useState(false)
   const [chatInput, setChatInput] = useState('')
-  // const [chatHistory, setChatHistory] = useState([])
+  const [chatHistory, setChatHistory] = useState([])
+  const [loading, setLoading] = useState(false)
 
   const [showHint, setShowHint] = useState(true)
 
@@ -33,6 +36,38 @@ const Page = () => {
     const timer = setTimeout(() => setShowHint(false), 3000) // Hide after 3 seconds
     return () => clearTimeout(timer)
   }, [])
+
+  // Function to handle sending a message
+  const handleSendMessage = async () => {
+    if (!chatInput.trim()) return; // Prevent empty messages
+
+    const userMessage = { sender: "user", text: chatInput };
+
+    // Update chat history with the user's message
+    setChatHistory(prev => [...prev, userMessage]);
+    setChatInput(""); // Clear input field
+
+    try {
+      setLoading(true);
+
+      // Call OpenAI API
+      const response = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: chatInput }),
+      });
+
+      const data = await response.json();
+
+      // Update chat history with AI response
+      setChatHistory(prev => [...prev, { sender: "bot", text: data.reply }]);
+    } catch (error) {
+      console.error("Error sending message:", error);
+      setChatHistory(prev => [...prev, { sender: "bot", text: "Error: Failed to reach AI." }]);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <Container>
@@ -72,7 +107,7 @@ const Page = () => {
       </Box>
 
       {/* Chatbot Floating Button */}
-      <Tooltip
+      <Tooltip hidden
         isOpen={showHint}
         placement="left"
         hasArrow
@@ -89,7 +124,7 @@ const Page = () => {
           </Box>
         }
       >
-        <Button
+        <Button hidden
           position="fixed"
           bottom="20px"
           right="20px"
@@ -117,18 +152,18 @@ const Page = () => {
           width="300px"
         >
           <Box height="200px" overflowY="auto" mb={2}>
-            {/*{chatHistory.map((msg, index) => (*/}
-            {/*  <Box*/}
-            {/*    key={index}*/}
-            {/*    bg={msg.sender === 'user' ? 'blue.200' : 'gray.300'}*/}
-            {/*    p={2}*/}
-            {/*    borderRadius="md"*/}
-            {/*    mb={1}*/}
-            {/*  >*/}
-            {/*    <strong>{msg.sender === 'user' ? 'You:' : 'Bot:'}</strong>{' '}*/}
-            {/*    {msg.text}*/}
-            {/*  </Box>*/}
-            {/*))}*/}
+            {chatHistory.map((msg, index) => (
+              <Box
+                key={index}
+                bg={msg.sender === "user" ? "blue.200" : "gray.300"}
+                p={2}
+                borderRadius="md"
+                mb={1}
+              >
+                <strong>{msg.sender === "user" ? "You:" : "Bot:"}</strong> {msg.text}
+              </Box>
+            ))}
+            {loading && <Spinner size="sm" color="teal.500" />}
           </Box>
           <Textarea
             value={chatInput}
@@ -136,7 +171,7 @@ const Page = () => {
             placeholder="Ask about me..."
             size="sm"
           />
-          <Button mt={2} width="100%" colorScheme="teal">
+          <Button mt={2} width="100%" colorScheme="teal" onClick={handleSendMessage}>
             Send
           </Button>
         </Box>
@@ -148,13 +183,13 @@ const Page = () => {
         <Paragraph>
           I am an experienced Head of Product with a strong technical
           background. I specialize in architecting scalable AI-driven platforms,
-          leading cross-functional engineering teams, and driving technical
-          strategy aligned with business objectives. I have successfully built
-          and deployed AI-powered automation tools, such as Quality Score and
+          leading engineering teams, and driving technical
+          strategy aligned with business objectives. I have successfully designed
+          and built AI-powered automation tools, such as Quality Score and
           Automatic Summary, enhancing operational efficiency and customer
-          insights. I ensure high security and compliance standards (ISO27001)
+          insights. I ensure high security and compliance standards
           while optimizing infrastructure for scalability. With a deep
-          understanding of enterprise software development, DevOps, and
+          understanding of enterprise software development, operations, and
           multilingual NLP systems, I focus on transforming complex technical
           challenges into business opportunities. I excel at leading engineering
           teams, fostering innovation, and aligning technology with long-term
@@ -169,21 +204,61 @@ const Page = () => {
         </Heading>
         <BioSection>
           <BioYear>1994</BioYear>
-          Born in Haapsalu, Estonia.
+          Born in Haapsalu, Estonia
         </BioSection>
         <BioSection>
           <BioYear>2016</BioYear>
           Completed the Bachelor&apos;s Program in the Tallinn University of
           Technology
+          <Button
+            size="xs"
+            ml={2}
+            onClick={() => setShowMoreBsc(!showMoreBsc)}
+          >
+            {showMoreBsc ? '-' : '+'}
+          </Button>
+          <Collapse in={showMoreBsc} animateOpacity>
+            <Box
+              mt={2}
+              p={3}
+              borderWidth={1}
+              borderRadius="md"
+              bg={useColorModeValue('gray.100', 'gray.700')}
+            >
+              <Paragraph>
+                Thesis: Implementation of Scrumban in a small software development company <Link target="_blank" href="https://digikogu.taltech.ee/et/Item/7ab426de-79c9-4bab-a5ef-fc15f4cd738d">Link</Link>
+              </Paragraph>
+            </Box>
+          </Collapse>
         </BioSection>
         <BioSection>
           <BioYear>2018</BioYear>
           Completed the Master&apos;s Program in the Tallinn University of
           Technology
+          <Button
+            size="xs"
+            ml={2}
+            onClick={() => setShowMoreMsc(!showMoreMsc)}
+          >
+            {showMoreMsc ? '-' : '+'}
+          </Button>
+          <Collapse in={showMoreMsc} animateOpacity>
+            <Box
+              mt={2}
+              p={3}
+              borderWidth={1}
+              borderRadius="md"
+              bg={useColorModeValue('gray.100', 'gray.700')}
+            >
+              <Paragraph>
+                Thesis: Topic patterns extraction from legal texts <Link target="_blank" href="https://digikogu.taltech.ee/et/Item/43135ad8-e53f-4a18-8f7b-077ba361f70d">Link</Link>
+              </Paragraph>
+            </Box>
+          </Collapse>
         </BioSection>
         <BioSection>
           <BioYear>2018 to 2024</BioYear>
-          Working at Feelingstream as Lead Developer
+          Worked at <Link target="_blank" href="https://www.feelingstream.com/">Feelingstream</Link> as Lead Developer
           <Button size="xs" ml={2} onClick={() => setShowMore(!showMore)}>
             {showMore ? '-' : '+'}
           </Button>
@@ -196,7 +271,6 @@ const Page = () => {
               bg={useColorModeValue('gray.100', 'gray.700')}
             >
               <Paragraph>
-                <br />
                 🥑 <strong>Spearheaded</strong> multiple software development
                 projects, overseeing the full lifecycle from design to
                 deployment.
@@ -229,7 +303,7 @@ const Page = () => {
         </BioSection>
         <BioSection>
           <BioYear>2024 to present</BioYear>
-          Working at Feelingstream as Head of Product
+          Working at <Link target="_blank" href="https://www.feelingstream.com/">Feelingstream</Link> as Head of Product
           <Button
             size="xs"
             ml={2}
@@ -246,7 +320,6 @@ const Page = () => {
               bg={useColorModeValue('gray.100', 'gray.700')}
             >
               <Paragraph>
-                <br />
                 🥑 <strong>Leading</strong> the development and evolution of
                 Feelingstream’s{' '}
                 <strong>AI-powered conversation analytics</strong> tool for
@@ -328,7 +401,7 @@ const Page = () => {
         <Heading as="h3" variant="section-title">
           I ♥
         </Heading>
-        <Paragraph>Football, Padel</Paragraph>
+        <Paragraph>Football, Padel, Film industry, Strategy board games, KotKot</Paragraph>
       </Section>
       <Section delay={0.3}>
         <Heading as="h3" variant="section-title">
