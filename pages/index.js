@@ -291,30 +291,30 @@ const Page = () => {
               bg={useColorModeValue('gray.100', 'gray.700')}
             >
               <Paragraph>
-                🥑 <strong>Spearheaded</strong> multiple software development
+                🚀 <strong>Spearheaded</strong> multiple software development
                 projects, overseeing the full lifecycle from design to
                 deployment.
                 <br />
-                🥑 <strong>Architected</strong> and developed an{' '}
+                🚀 <strong>Architected</strong> and developed an{' '}
                 <strong>automated analytics platform</strong> from scratch using{' '}
                 <strong>Flask/Django</strong>, PostgreSQL, Elasticsearch, React,
                 and TypeScript, laying the foundation for Feelingstream’s core
                 product.
                 <br />
-                🥑 <strong>Developed, implemented, and maintained</strong>{' '}
+                🚀 <strong>Developed, implemented, and maintained</strong>{' '}
                 microservices as part of Feelingstream’s application system,
                 integrating with platforms like{' '}
                 <strong>Genesys, Kafka, and Zendesk</strong>.
                 <br />
-                🥑 <strong>Designed</strong> real-time AI-driven insights
+                🚀 <strong>Designed</strong> real-time AI-driven insights
                 delivery based on customer conversations, automating task
                 assignments and notifications.
                 <br />
-                🥑 <strong>Led</strong> Kubernetes-based deployment strategies
+                🚀 <strong>Led</strong> Kubernetes-based deployment strategies
                 with <strong>ArgoCD</strong> and Helm charts for scalable and
                 reliable cloud infrastructure.
                 <br />
-                🥑 <strong>Played a key role</strong> in architectural
+                🚀 <strong>Played a key role</strong> in architectural
                 decisions, continuously improving system{' '}
                 <strong>efficiency and reliability</strong>.
               </Paragraph>
@@ -344,12 +344,12 @@ const Page = () => {
               bg={useColorModeValue('gray.100', 'gray.700')}
             >
               <Paragraph>
-                🥑 <strong>Leading</strong> the development and evolution of
+                🚀 <strong>Leading</strong> the development and evolution of
                 Feelingstream’s{' '}
                 <strong>AI-powered conversation analytics</strong> tool for
                 enterprise clients.
                 <br />
-                🥑 <strong>Planned and designed</strong> new tools,{' '}
+                🚀 <strong>Planned and designed</strong> new tools,{' '}
                 <strong>Quality Score</strong> and{' '}
                 <strong>Automatic Summary</strong>, which were the first
                 solutions to utilize{' '}
@@ -358,21 +358,21 @@ const Page = () => {
                 before <strong>successfully implementing</strong> these
                 innovations with the team.
                 <br />
-                🥑 <strong>Driving innovation</strong> in multilingual
+                🚀 <strong>Driving innovation</strong> in multilingual
                 speech-to-text transcriptions, <strong>AI automation</strong>,
                 and <strong>real-time insights</strong> for customer
                 conversations.
                 <br />
-                🥑 <strong>Collaborating</strong> with large Scandinavian banks
+                🚀 <strong>Collaborating</strong> with large Scandinavian banks
                 and telecom companies to{' '}
                 <strong>enhance customer service operations</strong> through
                 automation and analytics.
                 <br />
-                🥑 <strong>Ensuring product security and compliance</strong>,
+                🚀 <strong>Ensuring product security and compliance</strong>,
                 including <strong>ISO27001 certification</strong> for data
                 security and information management.
                 <br />
-                🥑 <strong>Overseeing a cross-functional team</strong>,{' '}
+                🚀 <strong>Overseeing a cross-functional team</strong>,{' '}
                 promoting a culture of efficiency, reliability, and continuous
                 improvement.
               </Paragraph>
@@ -459,7 +459,7 @@ const Page = () => {
           - Connect the tool to the systems you already use.
         </BioSection>
         <BioSection>
-          <BioYear>☁️</BioYear>
+          <BioYear>🛡️</BioYear>
           <Link target="_blank" href="https://www.feelingstream.com/security/">
             Security
           </Link>{' '}
