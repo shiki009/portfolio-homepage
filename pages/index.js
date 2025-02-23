@@ -10,7 +10,7 @@ import {
   ListItem,
   Icon,
   useColorModeValue,
-  Collapse,
+  Collapse
 } from '@chakra-ui/react'
 import Section from '../components/section'
 import Paragraph from '../components/paragraph'
@@ -26,14 +26,31 @@ const Page = () => {
   return (
     <Container>
       <Box
-        borderRadius="lg"
-        bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-        p={3}
-        mb={6}
-        align="center"
-      >
-        Hello, I&apos;m a Head of Product based in Estonia!
-      </Box>
+      position="relative"
+      zIndex="3" // Ensures it is above LazyDonut
+      borderRadius="lg"
+      bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+      p={3}
+      mb={6}
+      align="center"
+      transition="0.3s ease-in-out"
+      _hover={{
+        bgGradient: "linear(to-r, red.500, orange.500, yellow.500)",
+        backgroundSize: "200% 200%",
+        animation: "fireEffect 1s infinite alternate",
+        color: "white",
+        boxShadow: "0 0 20px rgba(255, 69, 0, 0.8)",
+      }}
+      sx={{
+        "@keyframes fireEffect": {
+          "0%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+          "100%": { backgroundPosition: "0% 50%" }
+        }
+      }}
+    >
+      Hello, I&apos;m a Head of Product based in Estonia!
+    </Box>
       <Box display={{ md: 'flex' }}>
         <Box flexGrow={1}>
           <Heading as="h2" variant="page-title">
@@ -317,8 +334,8 @@ const Page = () => {
           >
             Automatic Summary
           </Link>{' '}
-           - the Generative AI based automation that helps
-          reduce manual tasks, streamline processes, and save time.
+          - the Generative AI based automation that helps reduce manual tasks,
+          streamline processes, and save time.
         </BioSection>
         <BioSection>
           <BioYear>🔗</BioYear>
@@ -345,10 +362,10 @@ const Page = () => {
           >
             Automatic Quality Score
           </Link>{' '}
-          - is a Large Language Model (LLM) based
-          systematic automated assessment of call conversations. It evaluates
-          customer service interactions in a simple and straightforward manner,
-          focusing on key aspects of the conversation.
+          - is a Large Language Model (LLM) based systematic automated
+          assessment of call conversations. It evaluates customer service
+          interactions in a simple and straightforward manner, focusing on key
+          aspects of the conversation.
         </BioSection>
       </Section>
       <Section delay={0.3}>
