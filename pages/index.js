@@ -13,7 +13,8 @@ import {
   Collapse,
   Textarea,
   Tooltip,
-  Text, Spinner
+  Text,
+  Spinner
 } from '@chakra-ui/react'
 import Section from '../components/section'
 import Paragraph from '../components/paragraph'
@@ -39,35 +40,38 @@ const Page = () => {
 
   // Function to handle sending a message
   const handleSendMessage = async () => {
-    if (!chatInput.trim()) return; // Prevent empty messages
+    if (!chatInput.trim()) return // Prevent empty messages
 
-    const userMessage = { sender: "user", text: chatInput };
+    const userMessage = { sender: 'user', text: chatInput }
 
     // Update chat history with the user's message
-    setChatHistory(prev => [...prev, userMessage]);
-    setChatInput(""); // Clear input field
+    setChatHistory(prev => [...prev, userMessage])
+    setChatInput('') // Clear input field
 
     try {
-      setLoading(true);
+      setLoading(true)
 
       // Call OpenAI API
-      const response = await fetch("/api/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: chatInput }),
-      });
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: chatInput })
+      })
 
-      const data = await response.json();
+      const data = await response.json()
 
       // Update chat history with AI response
-      setChatHistory(prev => [...prev, { sender: "bot", text: data.reply }]);
+      setChatHistory(prev => [...prev, { sender: 'bot', text: data.reply }])
     } catch (error) {
-      console.error("Error sending message:", error);
-      setChatHistory(prev => [...prev, { sender: "bot", text: "Error: Failed to reach AI." }]);
+      console.error('Error sending message:', error)
+      setChatHistory(prev => [
+        ...prev,
+        { sender: 'bot', text: 'Error: Failed to reach AI.' }
+      ])
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  };
+  }
 
   return (
     <Container>
@@ -78,7 +82,7 @@ const Page = () => {
         mb={6}
         align="center"
       >
-        🥑 Hello, I&apos;m a Head of Product based in Estonia! 🥑
+        Hello, I&apos;m a Head of Product based in Estonia!
       </Box>
       <Box display={{ md: 'flex' }}>
         <Box flexGrow={1}>
@@ -107,7 +111,8 @@ const Page = () => {
       </Box>
 
       {/* Chatbot Floating Button */}
-      <Tooltip hidden
+      <Tooltip
+        hidden
         isOpen={showHint}
         placement="left"
         hasArrow
@@ -124,7 +129,8 @@ const Page = () => {
           </Box>
         }
       >
-        <Button hidden
+        <Button
+          hidden
           position="fixed"
           bottom="20px"
           right="20px"
@@ -155,12 +161,13 @@ const Page = () => {
             {chatHistory.map((msg, index) => (
               <Box
                 key={index}
-                bg={msg.sender === "user" ? "blue.200" : "gray.300"}
+                bg={msg.sender === 'user' ? 'blue.200' : 'gray.300'}
                 p={2}
                 borderRadius="md"
                 mb={1}
               >
-                <strong>{msg.sender === "user" ? "You:" : "Bot:"}</strong> {msg.text}
+                <strong>{msg.sender === 'user' ? 'You:' : 'Bot:'}</strong>{' '}
+                {msg.text}
               </Box>
             ))}
             {loading && <Spinner size="sm" color="teal.500" />}
@@ -171,7 +178,12 @@ const Page = () => {
             placeholder="Ask about me..."
             size="sm"
           />
-          <Button mt={2} width="100%" colorScheme="teal" onClick={handleSendMessage}>
+          <Button
+            mt={2}
+            width="100%"
+            colorScheme="teal"
+            onClick={handleSendMessage}
+          >
             Send
           </Button>
         </Box>
@@ -183,19 +195,18 @@ const Page = () => {
         <Paragraph>
           I am an experienced Head of Product with a strong technical
           background. I specialize in architecting scalable AI-driven platforms,
-          leading engineering teams, and driving technical
-          strategy aligned with business objectives. I have successfully designed
-          and built AI-powered automation tools, such as Quality Score and
-          Automatic Summary, enhancing operational efficiency and customer
-          insights. I ensure high security and compliance standards
-          while optimizing infrastructure for scalability. With a deep
-          understanding of enterprise software development, operations, and
-          multilingual NLP systems, I focus on transforming complex technical
-          challenges into business opportunities. I excel at leading engineering
-          teams, fostering innovation, and aligning technology with long-term
-          growth strategies. My expertise extends to product roadmaps,
-          stakeholder management, and technical leadership to drive sustained
-          success.
+          leading engineering teams, and driving technical strategy aligned with
+          business objectives. I have successfully designed and built AI-powered
+          automation tools, such as Quality Score and Automatic Summary,
+          enhancing operational efficiency and customer insights. I ensure high
+          security and compliance standards while optimizing infrastructure for
+          scalability. With a deep understanding of enterprise software
+          development, operations, and multilingual NLP systems, I focus on
+          transforming complex technical challenges into business opportunities.
+          I excel at leading engineering teams, fostering innovation, and
+          aligning technology with long-term growth strategies. My expertise
+          extends to product roadmaps, stakeholder management, and technical
+          leadership to drive sustained success.
         </Paragraph>
       </Section>
       <Section delay={0.2}>
@@ -210,11 +221,7 @@ const Page = () => {
           <BioYear>2016</BioYear>
           Completed the Bachelor&apos;s Program in the Tallinn University of
           Technology
-          <Button
-            size="xs"
-            ml={2}
-            onClick={() => setShowMoreBsc(!showMoreBsc)}
-          >
+          <Button size="xs" ml={2} onClick={() => setShowMoreBsc(!showMoreBsc)}>
             {showMoreBsc ? '-' : '+'}
           </Button>
           <Collapse in={showMoreBsc} animateOpacity>
@@ -226,7 +233,14 @@ const Page = () => {
               bg={useColorModeValue('gray.100', 'gray.700')}
             >
               <Paragraph>
-                Thesis: Implementation of Scrumban in a small software development company <Link target="_blank" href="https://digikogu.taltech.ee/et/Item/7ab426de-79c9-4bab-a5ef-fc15f4cd738d">Link</Link>
+                Thesis: Implementation of Scrumban in a small software
+                development company{' '}
+                <Link
+                  target="_blank"
+                  href="https://digikogu.taltech.ee/et/Item/7ab426de-79c9-4bab-a5ef-fc15f4cd738d"
+                >
+                  Link
+                </Link>
               </Paragraph>
             </Box>
           </Collapse>
@@ -235,11 +249,7 @@ const Page = () => {
           <BioYear>2018</BioYear>
           Completed the Master&apos;s Program in the Tallinn University of
           Technology
-          <Button
-            size="xs"
-            ml={2}
-            onClick={() => setShowMoreMsc(!showMoreMsc)}
-          >
+          <Button size="xs" ml={2} onClick={() => setShowMoreMsc(!showMoreMsc)}>
             {showMoreMsc ? '-' : '+'}
           </Button>
           <Collapse in={showMoreMsc} animateOpacity>
@@ -251,14 +261,24 @@ const Page = () => {
               bg={useColorModeValue('gray.100', 'gray.700')}
             >
               <Paragraph>
-                Thesis: Topic patterns extraction from legal texts <Link target="_blank" href="https://digikogu.taltech.ee/et/Item/43135ad8-e53f-4a18-8f7b-077ba361f70d">Link</Link>
+                Thesis: Topic patterns extraction from legal texts{' '}
+                <Link
+                  target="_blank"
+                  href="https://digikogu.taltech.ee/et/Item/43135ad8-e53f-4a18-8f7b-077ba361f70d"
+                >
+                  Link
+                </Link>
               </Paragraph>
             </Box>
           </Collapse>
         </BioSection>
         <BioSection>
           <BioYear>2018 to 2024</BioYear>
-          Worked at <Link target="_blank" href="https://www.feelingstream.com/">Feelingstream</Link> as Lead Developer
+          Worked at{' '}
+          <Link target="_blank" href="https://www.feelingstream.com/">
+            Feelingstream
+          </Link>{' '}
+          as Lead Developer
           <Button size="xs" ml={2} onClick={() => setShowMore(!showMore)}>
             {showMore ? '-' : '+'}
           </Button>
@@ -303,7 +323,11 @@ const Page = () => {
         </BioSection>
         <BioSection>
           <BioYear>2024 to present</BioYear>
-          Working at <Link target="_blank" href="https://www.feelingstream.com/">Feelingstream</Link> as Head of Product
+          Working at{' '}
+          <Link target="_blank" href="https://www.feelingstream.com/">
+            Feelingstream
+          </Link>{' '}
+          as Head of Product
           <Button
             size="xs"
             ml={2}
@@ -358,50 +382,110 @@ const Page = () => {
       </Section>
       <Section delay={0.2}>
         <Heading as="h3" variant="section-title">
-            Skills
+          Skills
         </Heading>
         <BioSection>
-            <BioYear>🐍</BioYear>
-            Python, Flask, Django, Elasticsearch, React, TypeScript, Redux, Redis, Celery, PostgreSQL, RabbitMQ, REST API, Kafka
+          <BioYear>🐍</BioYear>
+          Python, Flask, Django, Elasticsearch, React, TypeScript, Redux, Redis,
+          Celery, PostgreSQL, RabbitMQ, REST API, Kafka
         </BioSection>
         <BioSection>
-            <BioYear>🎯</BioYear>
-            Aligning technology with business goals, long-term planning
+          <BioYear>🎯</BioYear>
+          Aligning technology with business goals, long-term planning
         </BioSection>
         <BioSection>
-            <BioYear>🤖</BioYear>
-            LLMs, NLP, Speech Recognition (ASR), AI-powered automation
+          <BioYear>🤖</BioYear>
+          LLMs, NLP, Speech Recognition (ASR), AI-powered automation
         </BioSection>
         <BioSection>
-            <BioYear>☁️</BioYear>
-            Docker, Kubernetes, ArgoCD, Helm
+          <BioYear>☁️</BioYear>
+          Docker, Kubernetes, ArgoCD, Helm
         </BioSection>
         <BioSection>
-            <BioYear>🏗</BioYear>
-            Scalable microservices, event-driven architectures, high-availability systems
+          <BioYear>🏗</BioYear>
+          Scalable microservices, event-driven architectures, high-availability
+          systems
         </BioSection>
         <BioSection>
-            <BioYear>🏆</BioYear>
-            Hiring, mentoring, building high-performance engineering teams
+          <BioYear>🏆</BioYear>
+          Hiring, mentoring, building high-performance engineering teams
         </BioSection>
         <BioSection>
-            <BioYear>⚡</BioYear>
-            GitHub Copilot, OpenAI tools, Prompt Engineering
+          <BioYear>⚡</BioYear>
+          GitHub Copilot, OpenAI tools, Prompt Engineering
         </BioSection>
         <BioSection>
-            <BioYear>🔄</BioYear>
-            Scrum, Kanban, CI/CD Pipelines, stakeholder management
+          <BioYear>🔄</BioYear>
+          Scrum, Kanban, CI/CD Pipelines, stakeholder management
         </BioSection>
         <BioSection>
-            <BioYear>🔒</BioYear>
-            ISO27001, data governance, risk management
+          <BioYear>🔒</BioYear>
+          ISO27001, data governance, risk management
+        </BioSection>
+      </Section>
+      <Section delay={0.2}>
+        <Heading as="h3" variant="section-title">
+          Projects
+        </Heading>
+        <BioSection>
+          <BioYear>🔍</BioYear>
+          <Link
+            target="_blank"
+            href="https://www.feelingstream.com/product-overview/"
+          >
+            Vision
+          </Link>{' '}
+          - The conversation analytics tool for large enterprises.
+        </BioSection>
+        <BioSection>
+          <BioYear>📝</BioYear>
+          <Link
+            target="_blank"
+            href="https://www.feelingstream.com/automatic-summary/"
+          >
+            Automatic Summary
+          </Link>{' '}
+           - the Generative AI based automation that helps
+          reduce manual tasks, streamline processes, and save time.
+        </BioSection>
+        <BioSection>
+          <BioYear>🔗</BioYear>
+          <Link
+            target="_blank"
+            href="https://www.feelingstream.com/automatic-summary/"
+          >
+            Integrations
+          </Link>{' '}
+          - Connect the tool to the systems you already use.
+        </BioSection>
+        <BioSection>
+          <BioYear>☁️</BioYear>
+          <Link target="_blank" href="https://www.feelingstream.com/security/">
+            Security
+          </Link>{' '}
+          - Get full visibility with the needed security.
+        </BioSection>
+        <BioSection>
+          <BioYear>📊</BioYear>
+          <Link
+            target="_blank"
+            href="https://www.feelingstream.com/automatic-quality-score-with-genai/"
+          >
+            Automatic Quality Score
+          </Link>{' '}
+          - is a Large Language Model (LLM) based
+          systematic automated assessment of call conversations. It evaluates
+          customer service interactions in a simple and straightforward manner,
+          focusing on key aspects of the conversation.
         </BioSection>
       </Section>
       <Section delay={0.3}>
         <Heading as="h3" variant="section-title">
           I ♥
         </Heading>
-        <Paragraph>Football, Padel, Film industry, Strategy board games, KotKot</Paragraph>
+        <Paragraph>
+          Football, Padel, Film industry, Strategy board games, KotKot
+        </Paragraph>
       </Section>
       <Section delay={0.3}>
         <Heading as="h3" variant="section-title">
