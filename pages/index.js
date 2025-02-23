@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import {
   Link,
   Container,
@@ -11,67 +11,17 @@ import {
   Icon,
   useColorModeValue,
   Collapse,
-  Textarea,
-  Tooltip,
-  Text,
-  Spinner
 } from '@chakra-ui/react'
 import Section from '../components/section'
 import Paragraph from '../components/paragraph'
 import { BioSection, BioYear } from '../components/bio'
-import { IoLogoInstagram, IoLogoGithub, IoChatbubbles } from 'react-icons/io5'
+import { IoLogoInstagram, IoLogoGithub } from 'react-icons/io5'
 
 const Page = () => {
   const [showMore, setShowMore] = useState(false)
   const [showMoreHead, setShowMoreHead] = useState(false)
   const [showMoreBsc, setShowMoreBsc] = useState(false)
   const [showMoreMsc, setShowMoreMsc] = useState(false)
-  const [chatOpen, setChatOpen] = useState(false)
-  const [chatInput, setChatInput] = useState('')
-  const [chatHistory, setChatHistory] = useState([])
-  const [loading, setLoading] = useState(false)
-
-  const [showHint, setShowHint] = useState(true)
-
-  useEffect(() => {
-    const timer = setTimeout(() => setShowHint(false), 3000) // Hide after 3 seconds
-    return () => clearTimeout(timer)
-  }, [])
-
-  // Function to handle sending a message
-  const handleSendMessage = async () => {
-    if (!chatInput.trim()) return // Prevent empty messages
-
-    const userMessage = { sender: 'user', text: chatInput }
-
-    // Update chat history with the user's message
-    setChatHistory(prev => [...prev, userMessage])
-    setChatInput('') // Clear input field
-
-    try {
-      setLoading(true)
-
-      // Call OpenAI API
-      const response = await fetch('/api/chat', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: chatInput })
-      })
-
-      const data = await response.json()
-
-      // Update chat history with AI response
-      setChatHistory(prev => [...prev, { sender: 'bot', text: data.reply }])
-    } catch (error) {
-      console.error('Error sending message:', error)
-      setChatHistory(prev => [
-        ...prev,
-        { sender: 'bot', text: 'Error: Failed to reach AI.' }
-      ])
-    } finally {
-      setLoading(false)
-    }
-  }
 
   return (
     <Container>
@@ -110,84 +60,6 @@ const Page = () => {
         </Box>
       </Box>
 
-      {/* Chatbot Floating Button */}
-      <Tooltip
-        hidden
-        isOpen={showHint}
-        placement="left"
-        hasArrow
-        bg="white"
-        color="black"
-        boxShadow="lg"
-        p={3}
-        borderRadius="md"
-        fontSize="lg"
-        label={
-          <Box display="flex" alignItems="center" gap={2}>
-            <Text fontWeight="bold">Check here!</Text>
-            🥑🥑🥑
-          </Box>
-        }
-      >
-        <Button
-          hidden
-          position="fixed"
-          bottom="20px"
-          right="20px"
-          colorScheme="teal"
-          borderRadius="full"
-          p={6}
-          width="60px"
-          height="60px"
-          onClick={() => setChatOpen(prev => !prev)}
-        >
-          <Icon as={IoChatbubbles} w={8} h={8} /> {/* Increased icon size */}
-        </Button>
-      </Tooltip>
-
-      {/* Chatbot Window */}
-      {chatOpen && (
-        <Box
-          position="fixed"
-          bottom="80px"
-          right="20px"
-          // bg={useColorModeValue('gray.100', 'gray.700')}
-          p={4}
-          borderRadius="lg"
-          boxShadow="lg"
-          width="300px"
-        >
-          <Box height="200px" overflowY="auto" mb={2}>
-            {chatHistory.map((msg, index) => (
-              <Box
-                key={index}
-                bg={msg.sender === 'user' ? 'blue.200' : 'gray.300'}
-                p={2}
-                borderRadius="md"
-                mb={1}
-              >
-                <strong>{msg.sender === 'user' ? 'You:' : 'Bot:'}</strong>{' '}
-                {msg.text}
-              </Box>
-            ))}
-            {loading && <Spinner size="sm" color="teal.500" />}
-          </Box>
-          <Textarea
-            value={chatInput}
-            onChange={e => setChatInput(e.target.value)}
-            placeholder="Ask about me..."
-            size="sm"
-          />
-          <Button
-            mt={2}
-            width="100%"
-            colorScheme="teal"
-            onClick={handleSendMessage}
-          >
-            Send
-          </Button>
-        </Box>
-      )}
       <Section delay={0.1}>
         <Heading as="h3" variant="section-title">
           Summary
