@@ -26,37 +26,37 @@ const Page = () => {
   return (
     <Container>
       <Box
-      position="relative"
-      zIndex="3" // Ensures it is above LazyDonut
-      borderRadius="lg"
-      bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-      p={3}
-      mb={6}
-      align="center"
-      transition="0.3s ease-in-out"
-      _hover={{
-        bgGradient: "linear(to-r, red.500, orange.500, yellow.500)",
-        backgroundSize: "200% 200%",
-        animation: "fireEffect 1s infinite alternate",
-        color: "white",
-        boxShadow: "0 0 20px rgba(255, 69, 0, 0.8)",
-      }}
-      sx={{
-        "@keyframes fireEffect": {
-          "0%": { backgroundPosition: "0% 50%" },
-          "50%": { backgroundPosition: "100% 50%" },
-          "100%": { backgroundPosition: "0% 50%" }
-        }
-      }}
-    >
-      Hello, I&apos;m a Head of Product based in Estonia!
-    </Box>
+        position="relative"
+        zIndex="3" // Ensures it is above LazyDonut
+        borderRadius="lg"
+        bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+        p={3}
+        mb={6}
+        align="center"
+        transition="0.3s ease-in-out"
+        _hover={{
+          bgGradient: 'linear(to-r, red.500, orange.500, yellow.500)',
+          backgroundSize: '200% 200%',
+          animation: 'fireEffect 1s infinite alternate',
+          color: 'white',
+          boxShadow: '0 0 20px rgba(255, 69, 0, 0.8)'
+        }}
+        sx={{
+          '@keyframes fireEffect': {
+            '0%': { backgroundPosition: '0% 50%' },
+            '50%': { backgroundPosition: '100% 50%' },
+            '100%': { backgroundPosition: '0% 50%' }
+          }
+        }}
+      >
+        Hello, I&apos;m a Head of Product based in Estonia!
+      </Box>
       <Box display={{ md: 'flex' }}>
         <Box flexGrow={1}>
           <Heading as="h2" variant="page-title">
             Vladislav Šikirjavõi
           </Heading>
-          <p>Head of Product with a strong technical background</p>
+          <p>💻 AI-Powered Product Innovation | Technical Leadership</p>
         </Box>
         <Box
           flexShrink={0}
@@ -122,13 +122,12 @@ const Page = () => {
               bg={useColorModeValue('gray.100', 'gray.700')}
             >
               <Paragraph>
-                Thesis: Implementation of Scrumban in a small software
-                development company{' '}
                 <Link
                   target="_blank"
                   href="https://digikogu.taltech.ee/et/Item/7ab426de-79c9-4bab-a5ef-fc15f4cd738d"
                 >
-                  Link
+                  Thesis: Implementation of Scrumban in a small software
+                  development company
                 </Link>
               </Paragraph>
             </Box>
@@ -150,12 +149,11 @@ const Page = () => {
               bg={useColorModeValue('gray.100', 'gray.700')}
             >
               <Paragraph>
-                Thesis: Topic patterns extraction from legal texts{' '}
                 <Link
                   target="_blank"
                   href="https://digikogu.taltech.ee/et/Item/43135ad8-e53f-4a18-8f7b-077ba361f70d"
                 >
-                  Link
+                  Thesis: Topic patterns extraction from legal texts
                 </Link>
               </Paragraph>
             </Box>
