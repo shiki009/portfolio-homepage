@@ -10,7 +10,7 @@ import {
   ListItem,
   Icon,
   useColorModeValue,
-  Collapse
+  Collapse, Tooltip
 } from '@chakra-ui/react'
 import Section from '../components/section'
 import Paragraph from '../components/paragraph'
@@ -380,15 +380,20 @@ const Page = () => {
         </Heading>
         <List>
           <ListItem>
-            <Link href="https://github.com/shiki009" target="_blank">
-              <Button
-                variant="ghost"
-                colorScheme="teal"
-                leftIcon={<Icon as={IoLogoGithub} />}
-              >
-                @shiki009
-              </Button>
-            </Link>
+            <Tooltip
+              label="Most contributions are in private company repositories"
+              aria-label="GitHub Info"
+            >
+              <Link href="https://github.com/shiki009" target="_blank">
+                <Button
+                  variant="ghost"
+                  colorScheme="teal"
+                  leftIcon={<Icon as={IoLogoGithub} />}
+                >
+                  @shiki009 (1,000+ contributions/year)
+                </Button>
+              </Link>
+            </Tooltip>
           </ListItem>
           <ListItem>
             <Link href="https://instagram.com/v_shiki" target="_blank">
