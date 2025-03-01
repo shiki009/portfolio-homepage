@@ -71,7 +71,7 @@ const Page = () => {
             maxWidth="100px"
             display="inline-block"
             borderRadius="full"
-            src="/images/vlad_narrow.jpg"
+            src="/images/logo.jpg"
             alt="Profile image"
           />
         </Box>
