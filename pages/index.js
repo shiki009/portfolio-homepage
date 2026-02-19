@@ -49,7 +49,7 @@ const Page = () => {
           }
         }}
       >
-        Hello, I&apos;m a Head of Product based in Estonia!
+        Hello, I&apos;m a CTO based in Estonia!
       </Box>
       <Box display={{ md: 'flex' }}>
         <Box flexGrow={1}>
@@ -82,7 +82,7 @@ const Page = () => {
           Summary
         </Heading>
         <Paragraph>
-          I am an experienced Head of Product with a strong technical
+          I am an experienced CTO with a strong technical
           background. I specialize in architecting scalable AI-driven platforms,
           leading engineering teams, and driving technical strategy aligned with
           business objectives. I have successfully designed and built AI-powered
@@ -160,7 +160,7 @@ const Page = () => {
           </Collapse>
         </BioSection>
         <BioSection>
-          <BioYear>2018 to 2024</BioYear>
+          <BioYear>2018 to March 2025</BioYear>
           Worked at{' '}
           <Link target="_blank" href="https://www.feelingstream.com/">
             Feelingstream
@@ -209,12 +209,12 @@ const Page = () => {
           </Collapse>
         </BioSection>
         <BioSection>
-          <BioYear>2024 to present</BioYear>
+          <BioYear>April 2025 to present</BioYear>
           Working at{' '}
-          <Link target="_blank" href="https://www.feelingstream.com/">
-            Feelingstream
+          <Link target="_blank" href="https://www.avokaado.io/">
+            Avokaado
           </Link>{' '}
-          as Head of Product
+          as CTO
           <Button
             size="xs"
             ml={2}
@@ -231,37 +231,19 @@ const Page = () => {
               bg={useColorModeValue('gray.100', 'gray.700')}
             >
               <Paragraph>
-                🚀 <strong>Leading</strong> the development and evolution of
-                Feelingstream’s{' '}
-                <strong>AI-powered conversation analytics</strong> tool for
-                enterprise clients.
+                🚀 <strong>Leading</strong> technology strategy and engineering
+                for Avokaado&apos;s AI-powered contract lifecycle management
+                platform.
                 <br />
-                🚀 <strong>Planned and designed</strong> new tools,{' '}
-                <strong>Quality Score</strong> and{' '}
-                <strong>Automatic Summary</strong>, which were the first
-                solutions to utilize{' '}
-                <strong>Large Language Models (LLMs)</strong>.{' '}
-                <strong>Conducted in-depth market research</strong>
-                before <strong>successfully implementing</strong> these
-                innovations with the team.
+                🚀 <strong>Driving</strong> technical vision, product development,
+                and scalable architecture for enterprise legal tech.
                 <br />
-                🚀 <strong>Driving innovation</strong> in multilingual
-                speech-to-text transcriptions, <strong>AI automation</strong>,
-                and <strong>real-time insights</strong> for customer
-                conversations.
+                🚀 <strong>Overseeing</strong> engineering teams and fostering
+                innovation in contract automation and intelligence.
                 <br />
-                🚀 <strong>Collaborating</strong> with large Scandinavian banks
-                and telecom companies to{' '}
-                <strong>enhance customer service operations</strong> through
-                automation and analytics.
-                <br />
-                🚀 <strong>Ensuring product security and compliance</strong>,
-                including <strong>ISO27001 certification</strong> for data
-                security and information management.
-                <br />
-                🚀 <strong>Overseeing a cross-functional team</strong>,{' '}
-                promoting a culture of efficiency, reliability, and continuous
-                improvement.
+                🚀 <strong>Ensuring</strong> security, compliance, and
+                reliability for clients across telecom, retail, hospitality, and
+                finance sectors.
               </Paragraph>
             </Box>
           </Collapse>
