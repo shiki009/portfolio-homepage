@@ -15,7 +15,7 @@ import {
 import Section from '../components/section'
 import Paragraph from '../components/paragraph'
 import { BioSection, BioYear } from '../components/bio'
-import { IoLogoInstagram, IoLogoGithub } from 'react-icons/io5'
+import { IoLogoInstagram, IoLogoGithub, IoLogoLinkedin } from 'react-icons/io5'
 
 const Page = () => {
   const [showMore, setShowMore] = useState(false)
@@ -56,7 +56,7 @@ const Page = () => {
           <Heading as="h2" variant="page-title">
             Vladislav Šikirjavõi
           </Heading>
-          <p>💻 AI-Powered Product Innovation | Technical Leadership</p>
+          <p>CTO · Planning, building and shipping software</p>
         </Box>
         <Box
           flexShrink={0}
@@ -82,20 +82,14 @@ const Page = () => {
           Summary
         </Heading>
         <Paragraph>
-          I am an experienced CTO with a strong technical
-          background. I specialize in architecting scalable AI-driven platforms,
-          leading engineering teams, and driving technical strategy aligned with
-          business objectives. I have successfully designed and built AI-powered
-          automation tools, such as Quality Score and Automatic Summary,
-          enhancing operational efficiency and customer insights. I ensure high
-          security and compliance standards while optimizing infrastructure for
-          scalability. With a deep understanding of enterprise software
-          development, operations, and multilingual NLP systems, I focus on
-          transforming complex technical challenges into business opportunities.
-          I excel at leading engineering teams, fostering innovation, and
-          aligning technology with long-term growth strategies. My expertise
-          extends to product roadmaps, stakeholder management, and technical
-          leadership to drive sustained success.
+          CTO at{' '}
+          <Link target="_blank" href="https://www.avokaado.io/">
+            Avokaado
+          </Link>
+          . I plan, lead teams, write code, and deploy — across the full stack
+          and infrastructure. Background in backend engineering, cloud
+          infrastructure, and AI systems. I have been building software
+          professionally since 2018.
         </Paragraph>
       </Section>
       <Section delay={0.2}>
@@ -231,19 +225,18 @@ const Page = () => {
               bg={useColorModeValue('gray.100', 'gray.700')}
             >
               <Paragraph>
-                🚀 <strong>Leading</strong> technology strategy and engineering
-                for Avokaado&apos;s AI-powered contract lifecycle management
+                🛠 <strong>Planning</strong> the technical roadmap and
+                architecture for Avokaado&apos;s contract lifecycle management
                 platform.
                 <br />
-                🚀 <strong>Driving</strong> technical vision, product development,
-                and scalable architecture for enterprise legal tech.
+                👥 <strong>Leading</strong> the engineering team — hiring,
+                code reviews, sprint planning, and day-to-day execution.
                 <br />
-                🚀 <strong>Overseeing</strong> engineering teams and fostering
-                innovation in contract automation and intelligence.
+                💻 <strong>Hands-on development</strong> across backend,
+                frontend, and infrastructure.
                 <br />
-                🚀 <strong>Ensuring</strong> security, compliance, and
-                reliability for clients across telecom, retail, hospitality, and
-                finance sectors.
+                🚢 <strong>Deploying and maintaining</strong> production
+                systems, CI/CD pipelines, and cloud infrastructure.
               </Paragraph>
             </Box>
           </Collapse>
@@ -378,6 +371,17 @@ const Page = () => {
             </Tooltip>
           </ListItem>
           <ListItem>
+            <Link href="https://www.linkedin.com/in/vladislav-sikirjavoi/" target="_blank">
+              <Button
+                variant="ghost"
+                colorScheme="teal"
+                leftIcon={<Icon as={IoLogoLinkedin} />}
+              >
+                vladislav-sikirjavoi
+              </Button>
+            </Link>
+          </ListItem>
+          <ListItem>
             <Link href="https://instagram.com/v_shiki" target="_blank">
               <Button
                 variant="ghost"
@@ -385,6 +389,16 @@ const Page = () => {
                 leftIcon={<Icon as={IoLogoInstagram} />}
               >
                 @v_shiki
+              </Button>
+            </Link>
+          </ListItem>
+          <ListItem>
+            <Link href="mailto:vladislav.sikirjavoi@gmail.com">
+              <Button
+                variant="ghost"
+                colorScheme="teal"
+              >
+                vladislav.sikirjavoi@gmail.com
               </Button>
             </Link>
           </ListItem>
