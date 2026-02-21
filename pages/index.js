@@ -19,6 +19,7 @@ import { IoLogoInstagram, IoLogoGithub, IoLogoLinkedin } from 'react-icons/io5'
 
 const Page = () => {
   const [showMore, setShowMore] = useState(false)
+  const [showMoreFsHead, setShowMoreFsHead] = useState(false)
   const [showMoreHead, setShowMoreHead] = useState(false)
   const [showMoreBsc, setShowMoreBsc] = useState(false)
   const [showMoreMsc, setShowMoreMsc] = useState(false)
@@ -154,7 +155,7 @@ const Page = () => {
           </Collapse>
         </BioSection>
         <BioSection>
-          <BioYear>2018 to March 2025</BioYear>
+          <BioYear>2018 to April 2024</BioYear>
           Worked at{' '}
           <Link target="_blank" href="https://www.feelingstream.com/">
             Feelingstream
@@ -172,32 +173,56 @@ const Page = () => {
               bg={useColorModeValue('gray.100', 'gray.700')}
             >
               <Paragraph>
-                🚀 <strong>Spearheaded</strong> multiple software development
-                projects, overseeing the full lifecycle from design to
-                deployment.
+                🛠 <strong>Built</strong> the core analytics platform from
+                scratch using <strong>Flask/Django</strong>, PostgreSQL,
+                Elasticsearch, React, and TypeScript.
                 <br />
-                🚀 <strong>Architected</strong> and developed an{' '}
-                <strong>automated analytics platform</strong> from scratch using{' '}
-                <strong>Flask/Django</strong>, PostgreSQL, Elasticsearch, React,
-                and TypeScript, laying the foundation for Feelingstream’s core
-                product.
-                <br />
-                🚀 <strong>Developed, implemented, and maintained</strong>{' '}
-                microservices as part of Feelingstream’s application system,
-                integrating with platforms like{' '}
+                🛠 <strong>Developed and maintained</strong> microservices
+                integrating with{' '}
                 <strong>Genesys, Kafka, and Zendesk</strong>.
                 <br />
-                🚀 <strong>Designed</strong> real-time AI-driven insights
-                delivery based on customer conversations, automating task
-                assignments and notifications.
+                🛠 <strong>Designed</strong> real-time AI-driven insights
+                delivery based on customer conversations.
                 <br />
-                🚀 <strong>Led</strong> Kubernetes-based deployment strategies
-                with <strong>ArgoCD</strong> and Helm charts for scalable and
-                reliable cloud infrastructure.
+                🛠 <strong>Led</strong> Kubernetes-based deployments with{' '}
+                <strong>ArgoCD</strong> and Helm charts.
+              </Paragraph>
+            </Box>
+          </Collapse>
+        </BioSection>
+        <BioSection>
+          <BioYear>April 2024 to March 2025</BioYear>
+          Worked at{' '}
+          <Link target="_blank" href="https://www.feelingstream.com/">
+            Feelingstream
+          </Link>{' '}
+          as Head of Product
+          <Button size="xs" ml={2} onClick={() => setShowMoreFsHead(!showMoreFsHead)}>
+            {showMoreFsHead ? '-' : '+'}
+          </Button>
+          <Collapse in={showMoreFsHead} animateOpacity>
+            <Box
+              mt={2}
+              p={3}
+              borderWidth={1}
+              borderRadius="md"
+              bg={useColorModeValue('gray.100', 'gray.700')}
+            >
+              <Paragraph>
+                🛠 <strong>Led</strong> product strategy and roadmap for
+                Feelingstream&apos;s conversation analytics platform.
                 <br />
-                🚀 <strong>Played a key role</strong> in architectural
-                decisions, continuously improving system{' '}
-                <strong>efficiency and reliability</strong>.
+                🛠 <strong>Designed and shipped</strong>{' '}
+                <strong>Automatic Quality Score</strong> and{' '}
+                <strong>Automatic Summary</strong> — the first LLM-powered
+                features in the product.
+                <br />
+                🛠 <strong>Collaborated</strong> with enterprise clients in
+                banking and telecom to define requirements and validate
+                solutions.
+                <br />
+                🛠 <strong>Oversaw</strong> ISO27001 certification process for
+                data security and compliance.
               </Paragraph>
             </Box>
           </Collapse>
