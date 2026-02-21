@@ -30,13 +30,15 @@ const Navbar = props => {
               align="center"
               justify="space-between"
             >
-              <Flex align="center" mr={5}>
+              <Flex align="center" flex={1}>
                 <Heading as="h1" size="lg" letterSpacing={'tighter'}>
                   <Logo />
                 </Heading>
               </Flex>
 
-              <ThemeToggleButton />
+              <Box ml="auto">
+                <ThemeToggleButton />
+              </Box>
 
             </Container>
         </Box>
