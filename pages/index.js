@@ -73,7 +73,7 @@ const Page = () => {
             display="inline-block"
             borderRadius="full"
             src="/images/logo.jpg"
-            alt="Profile image"
+            alt="Vladislav Šikirjavõi"
           />
         </Box>
       </Box>
@@ -84,7 +84,7 @@ const Page = () => {
         </Heading>
         <Paragraph>
           CTO at{' '}
-          <Link target="_blank" href="https://www.avokaado.io/">
+          <Link target="_blank" rel="noopener noreferrer" href="https://www.avokaado.io/">
             Avokaado
           </Link>
           . I plan, lead teams, write code, and deploy — across the full stack
@@ -105,7 +105,7 @@ const Page = () => {
           <BioYear>2016</BioYear>
           Completed the Bachelor&apos;s Program in the Tallinn University of
           Technology
-          <Button size="xs" ml={2} onClick={() => setShowMoreBsc(!showMoreBsc)}>
+          <Button size="xs" ml={2} aria-label="Show BSc thesis" aria-expanded={showMoreBsc} onClick={() => setShowMoreBsc(!showMoreBsc)}>
             {showMoreBsc ? '-' : '+'}
           </Button>
           <Collapse in={showMoreBsc} animateOpacity>
@@ -118,7 +118,7 @@ const Page = () => {
             >
               <Paragraph>
                 <Link
-                  target="_blank"
+                  target="_blank" rel="noopener noreferrer"
                   href="https://digikogu.taltech.ee/et/Item/7ab426de-79c9-4bab-a5ef-fc15f4cd738d"
                 >
                   Thesis: Implementation of Scrumban in a small software
@@ -132,7 +132,7 @@ const Page = () => {
           <BioYear>2018</BioYear>
           Completed the Master&apos;s Program in the Tallinn University of
           Technology
-          <Button size="xs" ml={2} onClick={() => setShowMoreMsc(!showMoreMsc)}>
+          <Button size="xs" ml={2} aria-label="Show MSc thesis" aria-expanded={showMoreMsc} onClick={() => setShowMoreMsc(!showMoreMsc)}>
             {showMoreMsc ? '-' : '+'}
           </Button>
           <Collapse in={showMoreMsc} animateOpacity>
@@ -145,7 +145,7 @@ const Page = () => {
             >
               <Paragraph>
                 <Link
-                  target="_blank"
+                  target="_blank" rel="noopener noreferrer"
                   href="https://digikogu.taltech.ee/et/Item/43135ad8-e53f-4a18-8f7b-077ba361f70d"
                 >
                   Thesis: Topic patterns extraction from legal texts
@@ -157,11 +157,11 @@ const Page = () => {
         <BioSection>
           <BioYear>2018 to April 2024</BioYear>
           Worked at{' '}
-          <Link target="_blank" href="https://www.feelingstream.com/">
+          <Link target="_blank" rel="noopener noreferrer" href="https://www.feelingstream.com/">
             Feelingstream
           </Link>{' '}
           as Lead Developer
-          <Button size="xs" ml={2} onClick={() => setShowMore(!showMore)}>
+          <Button size="xs" ml={2} aria-label="Show Lead Developer details" aria-expanded={showMore} onClick={() => setShowMore(!showMore)}>
             {showMore ? '-' : '+'}
           </Button>
           <Collapse in={showMore} animateOpacity>
@@ -193,11 +193,11 @@ const Page = () => {
         <BioSection>
           <BioYear>April 2024 to March 2025</BioYear>
           Worked at{' '}
-          <Link target="_blank" href="https://www.feelingstream.com/">
+          <Link target="_blank" rel="noopener noreferrer" href="https://www.feelingstream.com/">
             Feelingstream
           </Link>{' '}
           as Head of Product
-          <Button size="xs" ml={2} onClick={() => setShowMoreFsHead(!showMoreFsHead)}>
+          <Button size="xs" ml={2} aria-label="Show Head of Product details" aria-expanded={showMoreFsHead} onClick={() => setShowMoreFsHead(!showMoreFsHead)}>
             {showMoreFsHead ? '-' : '+'}
           </Button>
           <Collapse in={showMoreFsHead} animateOpacity>
@@ -230,13 +230,15 @@ const Page = () => {
         <BioSection>
           <BioYear>April 2025 to present</BioYear>
           Working at{' '}
-          <Link target="_blank" href="https://www.avokaado.io/">
+          <Link target="_blank" rel="noopener noreferrer" href="https://www.avokaado.io/">
             Avokaado
           </Link>{' '}
           as CTO
           <Button
             size="xs"
             ml={2}
+            aria-label="Show CTO details"
+            aria-expanded={showMoreHead}
             onClick={() => setShowMoreHead(!showMoreHead)}
           >
             {showMoreHead ? '-' : '+'}
@@ -316,7 +318,7 @@ const Page = () => {
         </Heading>
         <BioSection>
           <BioYear>⚖️</BioYear>
-          <Link target="_blank" href="https://avokaado.io/avo">
+          <Link target="_blank" rel="noopener noreferrer" href="https://avokaado.io/avo">
             Avo by Avokaado
           </Link>{' '}
           - Governed AI for legal teams. Turns contracts into AI agents that
@@ -327,7 +329,7 @@ const Page = () => {
         <BioSection>
           <BioYear>🔍</BioYear>
           <Link
-            target="_blank"
+            target="_blank" rel="noopener noreferrer"
             href="https://www.feelingstream.com/product-overview/"
           >
             Vision
@@ -339,7 +341,7 @@ const Page = () => {
         <BioSection>
           <BioYear>📊</BioYear>
           <Link
-            target="_blank"
+            target="_blank" rel="noopener noreferrer"
             href="https://www.feelingstream.com/automatic-quality-score-with-genai/"
           >
             Automatic Quality Score
@@ -350,7 +352,7 @@ const Page = () => {
         <BioSection>
           <BioYear>📝</BioYear>
           <Link
-            target="_blank"
+            target="_blank" rel="noopener noreferrer"
             href="https://www.feelingstream.com/automatic-summary/"
           >
             Automatic Summary
@@ -377,7 +379,7 @@ const Page = () => {
               label="Most contributions are in private company repositories"
               aria-label="GitHub Info"
             >
-              <Link href="https://github.com/shiki009" target="_blank">
+              <Link href="https://github.com/shiki009" target="_blank" rel="noopener noreferrer">
                 <Button
                   variant="ghost"
                   colorScheme="teal"
@@ -389,7 +391,7 @@ const Page = () => {
             </Tooltip>
           </ListItem>
           <ListItem>
-            <Link href="https://www.linkedin.com/in/vladislav-sikirjavoi/" target="_blank">
+            <Link href="https://www.linkedin.com/in/vladislav-sikirjavoi/" target="_blank" rel="noopener noreferrer">
               <Button
                 variant="ghost"
                 colorScheme="teal"
@@ -400,7 +402,7 @@ const Page = () => {
             </Link>
           </ListItem>
           <ListItem>
-            <Link href="https://instagram.com/v_shiki" target="_blank">
+            <Link href="https://instagram.com/v_shiki" target="_blank" rel="noopener noreferrer">
               <Button
                 variant="ghost"
                 colorScheme="teal"

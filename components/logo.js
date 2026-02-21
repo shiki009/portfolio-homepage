@@ -24,19 +24,17 @@ const Logo = () => {
 
   return (
     <Link href="/">
-      <a>
-        <LogoBox>
-          <Image src={footPrintImg} width={20} height={20} alt="logo" />
-          <Text
-            color={useColorModeValue('gray.800', 'whiteAlpha.900')}
-            fontFamily='M PLUS Rounded 1c", sans-serif'
-            fontWeight="bold"
-            ml={3}
-          >
-            Vladislav Šikirjavõi
-          </Text>
-        </LogoBox>
-      </a>
+      <LogoBox>
+        <Image src={footPrintImg} width={20} height={20} alt="Vladislav Šikirjavõi — home" />
+        <Text
+          color={useColorModeValue('gray.800', 'whiteAlpha.900')}
+          fontFamily="'Rationale', sans-serif"
+          fontWeight="bold"
+          ml={3}
+        >
+          Vladislav Šikirjavõi
+        </Text>
+      </LogoBox>
     </Link>
   )
 }

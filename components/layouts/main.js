@@ -16,7 +16,15 @@ const Main = ({ children, router }) => {
 			<Head>
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<meta name="description" content="Vladislav Šikirjavõi — CTO at Avokaado. Planning, building and shipping software." />
-				<title>Vladislav Šikirjavõi</title>
+				<title>Vladislav Šikirjavõi — CTO</title>
+				<meta property="og:title" content="Vladislav Šikirjavõi — CTO" />
+				<meta property="og:description" content="CTO at Avokaado. Planning, building and shipping software." />
+				<meta property="og:type" content="website" />
+				<meta property="og:image" content="/images/android-chrome-512x512.png" />
+				<meta name="twitter:card" content="summary" />
+				<meta name="twitter:title" content="Vladislav Šikirjavõi — CTO" />
+				<meta name="twitter:description" content="CTO at Avokaado. Planning, building and shipping software." />
+				<meta name="twitter:image" content="/images/android-chrome-512x512.png" />
 				<link rel="icon" href="/images/favicon.ico" />
 				<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
 				<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />

@@ -16,12 +16,14 @@ export const DonutContainer = forwardRef(({ children }, ref) => (
   <Box
     ref={ref}
     className="donut"
+    aria-hidden="true"
     m="auto"
     mt={['-20px', '-60px', '-120px']}
     mb={['-40px', '-140px', '-200px']}
     w={[280, 480, 640]}
     h={[280, 480, 640]}
     position="relative"
+    overflow="hidden"
   >
     {children}
   </Box>
