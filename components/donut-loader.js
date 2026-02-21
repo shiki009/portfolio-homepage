@@ -18,10 +18,11 @@ export const DonutContainer = forwardRef(({ children }, ref) => (
     className="donut"
     aria-hidden="true"
     m="auto"
-    mt={['-20px', '-60px', '-120px']}
-    mb={['-40px', '-140px', '-200px']}
-    w={[280, 480, 640]}
-    h={[280, 480, 640]}
+    mt={['-10px', '-60px', '-120px']}
+    mb={['-20px', '-140px', '-200px']}
+    w={['100%', 480, 640]}
+    h={[240, 480, 640]}
+    maxW="100vw"
     position="relative"
     overflow="hidden"
   >

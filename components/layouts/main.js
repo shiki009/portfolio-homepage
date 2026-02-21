@@ -20,11 +20,11 @@ const Main = ({ children, router }) => {
 				<meta property="og:title" content="Vladislav Šikirjavõi — CTO" />
 				<meta property="og:description" content="CTO at Avokaado. Planning, building and shipping software." />
 				<meta property="og:type" content="website" />
-				<meta property="og:image" content="/images/android-chrome-512x512.png" />
-				<meta name="twitter:card" content="summary" />
+				<meta property="og:image" content="/images/og-image.png" />
+				<meta name="twitter:card" content="summary_large_image" />
 				<meta name="twitter:title" content="Vladislav Šikirjavõi — CTO" />
 				<meta name="twitter:description" content="CTO at Avokaado. Planning, building and shipping software." />
-				<meta name="twitter:image" content="/images/android-chrome-512x512.png" />
+				<meta name="twitter:image" content="/images/og-image.png" />
 				<link rel="icon" href="/images/favicon.ico" />
 				<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
 				<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
