@@ -290,6 +290,16 @@ const Page = () => {
           Projects
         </Heading>
         <BioSection>
+          <BioYear>⚖️</BioYear>
+          <Link target="_blank" href="https://avokaado.io/avo">
+            Avo by Avokaado
+          </Link>{' '}
+          - Governed AI for legal teams. Turns contracts into AI agents that
+          handle the full lifecycle — drafting, negotiating, approving, and
+          archiving — within defined rules and with every decision explainable
+          and auditable.
+        </BioSection>
+        <BioSection>
           <BioYear>🔍</BioYear>
           <Link
             target="_blank"
@@ -297,35 +307,9 @@ const Page = () => {
           >
             Vision
           </Link>{' '}
-          - The conversation analytics tool for large enterprises.
-        </BioSection>
-        <BioSection>
-          <BioYear>📝</BioYear>
-          <Link
-            target="_blank"
-            href="https://www.feelingstream.com/automatic-summary/"
-          >
-            Automatic Summary
-          </Link>{' '}
-          - the Generative AI based automation that helps reduce manual tasks,
-          streamline processes, and save time.
-        </BioSection>
-        <BioSection>
-          <BioYear>🔗</BioYear>
-          <Link
-            target="_blank"
-            href="https://www.feelingstream.com/automatic-summary/"
-          >
-            Integrations
-          </Link>{' '}
-          - Connect the tool to the systems you already use.
-        </BioSection>
-        <BioSection>
-          <BioYear>🛡️</BioYear>
-          <Link target="_blank" href="https://www.feelingstream.com/security/">
-            Security
-          </Link>{' '}
-          - Get full visibility with the needed security.
+          - Conversation analytics platform for large enterprises. Built from
+          scratch, including the core backend, microservices, and AI-powered
+          insights layer.
         </BioSection>
         <BioSection>
           <BioYear>📊</BioYear>
@@ -335,10 +319,19 @@ const Page = () => {
           >
             Automatic Quality Score
           </Link>{' '}
-          - is a Large Language Model (LLM) based systematic automated
-          assessment of call conversations. It evaluates customer service
-          interactions in a simple and straightforward manner, focusing on key
-          aspects of the conversation.
+          - LLM-based automated scoring of customer service calls. Designed and
+          led the development end-to-end.
+        </BioSection>
+        <BioSection>
+          <BioYear>📝</BioYear>
+          <Link
+            target="_blank"
+            href="https://www.feelingstream.com/automatic-summary/"
+          >
+            Automatic Summary
+          </Link>{' '}
+          - Generative AI automation that summarises call conversations,
+          reducing manual after-call work.
         </BioSection>
       </Section>
       <Section delay={0.3}>

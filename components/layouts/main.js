@@ -15,7 +15,8 @@ const Main = ({ children, router }) => {
 		<Box as="main" pb={8}>
 			<Head>
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
-				<meta name="description" content="Vlad's homepage" />
+				<meta name="description" content="Vladislav Šikirjavõi — CTO at Avokaado. Planning, building and shipping software." />
+				<title>Vladislav Šikirjavõi</title>
 				<link rel="icon" href="/images/favicon.ico" />
 				<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
 				<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
