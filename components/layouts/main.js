@@ -4,13 +4,21 @@ import NavBar from '../navbar';
 import { Box, Container } from '@chakra-ui/react';
 import Footer from '../footer';
 import DonutLoader from '../donut-loader';
+import { useGameMode } from '../../lib/gameContext';
 
 const LazyDonut = dynamic(() => import('../donut'), {
 	ssr: false,
 	loading: () => <DonutLoader />
 });
 
+const LazyGameMode = dynamic(() => import('../game/GameMode'), {
+	ssr: false,
+	loading: () => <DonutLoader />
+});
+
 const Main = ({ children, router }) => {
+	const { isGameMode } = useGameMode();
+
 	return (
 		<Box as="main" pb={8}>
 			<Head>
@@ -34,9 +42,15 @@ const Main = ({ children, router }) => {
 			<NavBar path={router.asPath} />
 
 			<Container maxW="container.md" pt={14}>
-				<LazyDonut />
-				{children}
-				<Footer />
+				{isGameMode ? (
+					<LazyGameMode />
+				) : (
+					<>
+						<LazyDonut />
+						{children}
+						<Footer />
+					</>
+				)}
 			</Container>
 		</Box>
 	);
