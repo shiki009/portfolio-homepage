@@ -15,7 +15,7 @@ const Website = ({ Component, pageProps, router }) => {
       </GameModeProvider>
       <Script
         defer
-        src="https://expandumami.duckdns.org/script.js"
+        src="https://expandumami.duckdns.org/getinfo.js"
         data-website-id="6d6c6f10-943a-40dc-8c4d-aecc178501fc"
         strategy="afterInteractive"
       />
