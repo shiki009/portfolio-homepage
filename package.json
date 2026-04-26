@@ -35,7 +35,8 @@
     "typescript": "^5.9.3"
   },
   "overrides": {
-    "minimatch": "^10.2.1"
+    "minimatch": "^10.2.1",
+    "postcss": "^8.5.11"
   },
   "main": "next.config.js",
   "directories": {
